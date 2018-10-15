@@ -11,6 +11,7 @@ channels = "*"
 [dev-packages]
 "flake8" = "*"
 black = "*"
+pdbpp = "*"
 
 [requires]
 python_version = "3.7"

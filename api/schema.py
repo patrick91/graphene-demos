@@ -3,6 +3,7 @@ import graphene
 
 
 from polls.schema import PollsQuery
+from polls.mutations import PollsMutations
 
 
 class Query(PollsQuery, graphene.ObjectType):
@@ -26,4 +27,10 @@ class Subscription(graphene.ObjectType):
             await asyncio.sleep(1)
 
 
-schema = graphene.Schema(query=Query, subscription=Subscription)
+class Mutations(PollsMutations, graphene.ObjectType):
+    pass
+
+
+schema = graphene.Schema(
+    query=Query, mutation=Mutations, subscription=Subscription
+)
