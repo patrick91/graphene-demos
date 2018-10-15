@@ -2,7 +2,10 @@ import asyncio
 import graphene
 
 
-class Query(graphene.ObjectType):
+from polls.schema import PollsQuery
+
+
+class Query(PollsQuery, graphene.ObjectType):
     hello = graphene.String()
 
     def resolve_hello(self, info, **kwargs):
