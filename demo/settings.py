@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    "channels",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -120,3 +121,6 @@ USE_TZ = True
 STATIC_URL = "/static/"
 
 GRAPHENE = {"SCHEMA": "api.schema.schema"}
+
+ASGI_APPLICATION = "demo.routing.application"
+CHANNELS_WS_PROTOCOLS = ["graphql-ws"]
