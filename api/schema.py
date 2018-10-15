@@ -4,6 +4,7 @@ import graphene
 
 from polls.schema import PollsQuery
 from polls.mutations import PollsMutations
+from polls.subscriptions import PollsSubscription
 
 
 class Query(PollsQuery, graphene.ObjectType):
@@ -13,7 +14,7 @@ class Query(PollsQuery, graphene.ObjectType):
         return "world"
 
 
-class Subscription(graphene.ObjectType):
+class Subscription(PollsSubscription, graphene.ObjectType):
     count_seconds = graphene.Int(up_to=graphene.Int())
 
     async def resolve_count_seconds(root, info, up_to=5):

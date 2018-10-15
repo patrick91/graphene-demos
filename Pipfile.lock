@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "53a79466499b9ec6fdd6b91dfb1f86dbdce172c80effb0c4cd277ca4588145bc"
+            "sha256": "9bd041b91316a43a60ec5e3baf5cf550e7692f5277bc469c9c58eb69a2aff1e6"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -16,6 +16,13 @@
         ]
     },
     "default": {
+        "aiopubsub": {
+            "hashes": [
+                "sha256:e75aae34d43506967dd92ce792995b8e815ddb31d42a114260036892d8693e91"
+            ],
+            "index": "pypi",
+            "version": "==2.1.5"
+        },
         "aniso8601": {
             "hashes": [
                 "sha256:7849749cf00ae0680ad2bdfe4419c7a662bef19c03691a19e008c8b9a5267802",

@@ -7,6 +7,7 @@ name = "pypi"
 django = "*"
 graphene-django = "*"
 channels = "*"
+aiopubsub = "*"
 
 [dev-packages]
 "flake8" = "*"

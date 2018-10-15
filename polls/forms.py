@@ -1,6 +1,9 @@
+import aiopubsub
+
 from django import forms
 
 from .models import Poll
+from .pubsub import hub
 
 
 class VoteForm(forms.Form):
@@ -16,7 +19,10 @@ class VoteForm(forms.Form):
         )
 
     def save(self):
-        choice = self.cleaned_data['choice']
+        choice = self.cleaned_data["choice"]
 
         choice.votes += 1
         choice.save()
+
+        publisher = aiopubsub.Publisher(hub, aiopubsub.Key("poll"))
+        publisher.publish(aiopubsub.Key("on_vote"), self.poll)
